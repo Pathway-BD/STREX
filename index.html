@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>StreX — Heat Stress Calendar · Bangladesh</title>
+  <title>STREX — Heat Stress Calendar · Bangladesh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -141,7 +141,7 @@
 <body>
 
   <header>
-    <div class="logo">Stre<span>X</span></div>
+    <div class="logo">STRE<span>X</span></div>
     <div class="header-sub">Heat Stress Calendar · Bangladesh</div>
   </header>
 
@@ -183,7 +183,7 @@
         <div class="leg"><div class="dot" style="background:#EF9F27;"></div> Mild (72–78)</div>
         <div class="leg"><div class="dot" style="background:#D85A30;"></div> Moderate (79–88)</div>
         <div class="leg"><div class="dot" style="background:#E24B4A;"></div> Severe (89–98)</div>
-        <div class="leg"><div class="dot" style="background:#185FA5;"></div> StreX recommended</div>
+        <div class="leg"><div class="dot" style="background:#185FA5;"></div> STREX recommended</div>
       </div>
 
       <div class="season-row" id="seasonRow"></div>
@@ -194,7 +194,7 @@
           <div id="summaryRows"></div>
         </div>
         <div class="icard">
-          <div class="icard-title">StreX window</div>
+          <div class="icard-title">STREX window</div>
           <div id="strexRows"></div>
         </div>
       </div>
@@ -219,7 +219,7 @@
         },
         strex:[false,false,false,true,true,true,true,true,true,true,false,false],
         strexWindow:'April – October',strexMonths:7,
-        note:'Northwest Bangladesh (Bogura, Dinajpur, Rangpur, Syedpur) enters mild stress from March and peaks at moderate levels (THI 79–80) during the rainy season. StreX is recommended from April through October.'
+        note:'Northwest Bangladesh (Bogura, Dinajpur, Rangpur, Syedpur) enters mild stress from March and peaks at moderate levels (THI 79–80) during the rainy season. STREX is recommended from April through October.'
       },
       NE: {
         label:'Monthly average THI — Northeast Region',
@@ -232,7 +232,7 @@
         },
         strex:[false,false,false,true,true,true,true,true,true,true,false,false],
         strexWindow:'April – October',strexMonths:7,
-        note:'Northeast Bangladesh (Mymensingh, Srimangal, Sylhet) has moderate heat stress from June through September. Mild stress starts from March. StreX from April supports flock performance ahead of the peak window.'
+        note:'Northeast Bangladesh (Mymensingh, Srimangal, Sylhet) has moderate heat stress from June through September. Mild stress starts from March. STREX from April supports flock performance ahead of the peak window.'
       },
       WC: {
         label:'Monthly average THI — West Central Region',
@@ -245,7 +245,7 @@
         },
         strex:[false,false,true,true,true,true,true,true,true,true,false,false],
         strexWindow:'March – October',strexMonths:8,
-        note:'West Central Bangladesh (Rajshahi, Jessore, Ishurdi, Chuadanga, Faridpur, Tangail) is the highest-risk region — the hottest in the country. Average THI peaks at 81 from June to August, with maximum THI reaching severe levels (89–90) in peak summer. StreX is critical from March through October.'
+        note:'West Central Bangladesh (Rajshahi, Jessore, Ishurdi, Chuadanga, Faridpur, Tangail) is the highest-risk region — the hottest in the country. Average THI peaks at 81 from June to August, with maximum THI reaching severe levels (89–90) in peak summer. STREX is critical from March through October.'
       },
       EC: {
         label:'Monthly average THI — East Central Region',
@@ -258,7 +258,7 @@
         },
         strex:[false,false,false,true,true,true,true,true,true,true,false,false],
         strexWindow:'April – October',strexMonths:7,
-        note:'East Central Bangladesh (Dhaka, Cumilla, Chandpur, Madaripur) includes the capital and most commercial broiler farms. THI reaches moderate stress (80–81) from June through September. StreX from April prevents peak-season performance decline.'
+        note:'East Central Bangladesh (Dhaka, Cumilla, Chandpur, Madaripur) includes the capital and most commercial broiler farms. THI reaches moderate stress (80–81) from June through September. STREX from April prevents peak-season performance decline.'
       }
     };
 
@@ -282,7 +282,7 @@
         card.className = 'mc';
         card.style.background = z.bg;
         card.style.borderColor = z.border;
-        const pin = d.strex[i] ? `<div class="strex-pin">StreX</div>` : '';
+        const pin = d.strex[i] ? `<div class="strex-pin">STREX</div>` : '';
         card.innerHTML = `${pin}<div class="mc-name" style="color:${z.tc};">${m}</div><div class="mc-thi" style="color:${z.tc};">${thi}</div><div class="mc-zone" style="color:${z.tc};">${z.label}</div>`;
         grid.appendChild(card);
       });
@@ -317,7 +317,7 @@
         <div class="irow"><span class="irow-l">THI scale</span><span class="irow-r">Armstrong (1994)</span></div>
       `;
       document.getElementById('strexBanner').innerHTML = `
-        <div class="banner-title">StreX intervention strategy — ${rkey} region</div>
+        <div class="banner-title">STREX intervention strategy — ${rkey} region</div>
         <div class="banner-body">${d.note}</div>
       `;
     }
