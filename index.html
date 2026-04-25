@@ -103,12 +103,41 @@
     .banner-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
     .source-note { font-size: 11px; color: var(--color-text-tertiary); margin-top: 14px; line-height: 1.6; }
 
+    /* ── map + region selector layout ── */
+    .region-selector {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 1.75rem;
+    }
+    .map-panel {
+      flex: 0 0 auto;
+      width: 240px;
+      position: relative;
+      background: #ffffff;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+    }
+    .thi-map {
+      width: 100%;
+      display: block;
+      mix-blend-mode: multiply;
+    }
+    .region-panel {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .region-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    @media (max-width: 600px) {
+      .region-selector { flex-direction: column; }
+      .map-panel { width: 100%; max-width: 300px; margin: 0 auto; }
+    }
     @media (max-width: 540px) {
       header { padding: 0 1.25rem; }
       main { padding: 0 1.25rem; }
       .grid12 { grid-template-columns: repeat(6, 1fr); }
       .cards2 { grid-template-columns: 1fr; }
-      .region-grid { grid-template-columns: 1fr; }
       .season-row { grid-template-columns: 1fr; }
     }
   </style>
@@ -123,24 +152,31 @@
   <main>
     <div class="wrap">
 
-      <div class="section-label">Select region — Bangladesh</div>
-      <div class="region-grid">
-        <button class="rtab active" onclick="setRegion('NW',this)">
-          <span class="rtab-name">Northwest (NW)</span>
-          <span class="rtab-cities">#Bogura #Dinajpur #Rangpur #Syedpur</span>
-        </button>
-        <button class="rtab" onclick="setRegion('NE',this)">
-          <span class="rtab-name">Northeast (NE)</span>
-          <span class="rtab-cities">#Mymensingh #Srimangal #Sylhet</span>
-        </button>
-        <button class="rtab" onclick="setRegion('WC',this)">
-          <span class="rtab-name">West Central (WC)</span>
-          <span class="rtab-cities">#Rajshahi #Jessore #Ishurdi #Chuadanga #Faridpur #Tangail</span>
-        </button>
-        <button class="rtab" onclick="setRegion('EC',this)">
-          <span class="rtab-name">East Central (EC)</span>
-          <span class="rtab-cities">#Dhaka #Cumilla #Chandpur #Madaripur</span>
-        </button>
+      <div class="region-selector">
+        <div class="map-panel">
+          <img src="thi-map.png" alt="Bangladesh THI Map" class="thi-map" />
+        </div>
+        <div class="region-panel">
+          <div class="section-label">Select region — Bangladesh</div>
+          <div class="region-grid">
+            <button class="rtab active" onclick="setRegion('NW',this)">
+              <span class="rtab-name">Northwest (NW)</span>
+              <span class="rtab-cities">#Bogura #Dinajpur #Rangpur #Syedpur</span>
+            </button>
+            <button class="rtab" onclick="setRegion('NE',this)">
+              <span class="rtab-name">Northeast (NE)</span>
+              <span class="rtab-cities">#Mymensingh #Srimangal #Sylhet</span>
+            </button>
+            <button class="rtab" onclick="setRegion('WC',this)">
+              <span class="rtab-name">West Central (WC)</span>
+              <span class="rtab-cities">#Rajshahi #Jessore #Ishurdi #Chuadanga #Faridpur #Tangail</span>
+            </button>
+            <button class="rtab" onclick="setRegion('EC',this)">
+              <span class="rtab-name">East Central (EC)</span>
+              <span class="rtab-cities">#Dhaka #Cumilla #Chandpur #Madaripur</span>
+            </button>
+          </div>
+        </div>
       </div>
 
       <div id="calLabel">Monthly average THI — Northwest Region</div>
