@@ -124,7 +124,8 @@
     .cal-detail-row:last-child { border-bottom: none; }
     .cal-row-label { font-size: 12px; color: var(--color-text-tertiary); }
     .cal-row-value { font-size: 12px; font-weight: 600; }
-    .cal-strex-badge { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.3; background: #185FA5; color: #fff; font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; }
+    .cal-strex-badge { display: inline-flex; flex-direction: column; align-items: center; line-height: 1.3; background: #185FA5; color: #fff; font-size: 11px; font-weight: 600; padding: 5px 12px; border-radius: 20px; cursor: pointer; text-decoration: none; transition: background 0.15s; }
+    .cal-strex-badge:hover { background: #134880; }
     .cal-no-strex { font-size: 12px; color: var(--color-text-tertiary); font-style: italic; }
     .cal-strex-context { font-size: 11px; color: #3A7A52; font-weight: 500; font-style: italic; line-height: 1.4; }
     .cal-detail-note { margin: 0 18px 16px; background: var(--color-background-secondary); border-radius: 8px; padding: 10px 12px; font-size: 12px; line-height: 1.6; color: var(--color-text-secondary); }
@@ -142,7 +143,10 @@
     .season-zone { font-size: 12px; margin-top: 3px; font-weight: 400; }
     .cards2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1.25rem; }
     .icard { background: #ffffff; border: 1px solid var(--color-border-tertiary); border-radius: var(--border-radius-md); padding: 16px 18px; }
-    .icard-title { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.07em; }
+    .icard-title-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .icard-title { font-size: 11px; font-weight: 600; color: var(--color-text-tertiary); text-transform: uppercase; letter-spacing: 0.07em; }
+    .icard-link-btn { font-size: 10px; font-weight: 600; color: #185FA5; background: #E6F1FB; border: none; border-radius: 20px; padding: 4px 10px; cursor: pointer; text-decoration: none; white-space: nowrap; transition: background 0.15s; }
+    .icard-link-btn:hover { background: #cfe3f7; }
     .irow { display: flex; justify-content: space-between; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--color-border-tertiary); font-size: 13px; }
     .irow:last-child { border-bottom: none; }
     .irow-l { color: var(--color-text-secondary); }
@@ -175,7 +179,7 @@
     }
     .hero-kicker-label {
       font-family: var(--font-serif);
-      font-size: 44px;
+      font-size: 46px;
       font-weight: 900;
       line-height: 1;
       color: #E06820;
@@ -429,7 +433,7 @@
       /* ── Hero ── */
       .hero { padding: 1.25rem 0 1rem; margin-bottom: 1.25rem; }
       .hero-eyebrow { font-size: 9px; margin-bottom: 0.4rem; }
-      .hero-kicker-label { font-size: 36px; }
+      .hero-kicker-label { font-size: 38px; }
       .hero-kicker-sub { font-size: 10px; }
       .hero-body { font-size: 13px; line-height: 1.65; }
       .cal-section-rule { margin: 1.5rem 0 1.1rem; }
@@ -516,7 +520,7 @@
       <div class="hero">
         <div class="hero-eyebrow">Heat Crisis · Bangladesh Poultry</div>
         <div class="hero-kicker">
-          <div class="hero-kicker-label">Heat Waves : <span class="bd-flag"></span></div>
+          <div class="hero-kicker-label">Heat Waves : 🇧🇩</div>
           <div class="hero-kicker-sub">The Chickens<br>Can't Sweat.</div>
         </div>
         <div class="hero-body">
@@ -649,7 +653,10 @@
             <div id="summaryRows"></div>
           </div>
           <div class="icard">
-            <div class="icard-title">STREX window</div>
+            <div class="icard-title-row">
+              <div class="icard-title">STREX window</div>
+              <a href="#" class="icard-link-btn">Learn about STREX →</a>
+            </div>
             <div id="strexRows"></div>
           </div>
         </div>
@@ -743,7 +750,7 @@
             <div class="cal-detail-row">
               <span class="cal-row-label">STREX</span>
               ${strex
-                ? '<span class="cal-strex-badge"><span>✓ STREX</span><span>recommended</span></span>'
+                ? '<a href="#" class="cal-strex-badge"><span>✓ STREX</span><span>recommended</span></a>'
                 : level === 'safe'
                   ? '<span class="cal-strex-context">Consider during vaccine,<br>feed change, or relocation</span>'
                   : '<span class="cal-no-strex">Not required</span>'}
