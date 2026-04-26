@@ -436,6 +436,7 @@
       </div>
 
       <div id="calLabel">Monthly average THI — Northwest Region</div>
+      <div style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:10px;margin-top:-6px;">궁금한 월이 있으면 <strong style="color:var(--color-text-secondary);">클릭</strong>해보세요</div>
       <div class="cal-now-row" id="calNowRow"></div>
       <div class="cal-heatmap" id="calHeatmap"></div>
 
@@ -606,8 +607,19 @@
         heatmapEl.appendChild(cell);
       });
 
-      document.getElementById('calDetailWrap').innerHTML = '';
-      selectedCalIdx = null;
+      // auto-select current month
+      const cells = heatmapEl.querySelectorAll('.cal-cell');
+      const autoCell = cells[currentMonth];
+      if (autoCell) {
+        selectedCalIdx = currentMonth;
+        autoCell.classList.add('selected');
+        const d2 = regions[rkey];
+        const thi2 = d2.thi[currentMonth];
+        renderCalDetail(months[currentMonth], thi2, getLevel(thi2), d2.strex[currentMonth]);
+      } else {
+        document.getElementById('calDetailWrap').innerHTML = '';
+        selectedCalIdx = null;
+      }
     }
 
     const regions = {
