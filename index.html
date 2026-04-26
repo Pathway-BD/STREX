@@ -6,10 +6,12 @@
   <title>STREX — Heat Stress Calendar · Bangladesh</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=DM+Serif+Display&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-serif: 'Playfair Display', 'DM Serif Display', Georgia, serif;
+      --heat: #c94a1a;
       --color-text-primary: #0f0f0f;
       --color-text-secondary: #4a4a4a;
       --color-text-tertiary: #888888;
@@ -149,56 +151,71 @@
     .banner-body { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
     .source-note { font-size: 11px; color: var(--color-text-tertiary); margin-top: 14px; line-height: 1.6; }
 
-    /* ── hero ── */
-    .page-title-block {
-      padding: 2rem 0 1.5rem;
-      border-bottom: 1px solid var(--color-border-tertiary);
-      margin-bottom: 1.75rem;
-    }
-    .page-title-main {
-      font-family: var(--font-serif);
-      font-size: 36px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      letter-spacing: -0.01em;
-      line-height: 1.1;
-    }
-    .page-title-sub {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--color-text-tertiary);
-      margin-top: 6px;
-      letter-spacing: 0.02em;
-    }
+    /* ── hero headline ── */
     .hero {
       padding: 2rem 0 1.75rem;
       border-bottom: 1px solid var(--color-border-tertiary);
       margin-bottom: 1.75rem;
     }
     .hero-eyebrow {
+      font-family: 'Barlow Condensed', sans-serif;
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #D85A30;
-      margin-bottom: 0.6rem;
+      color: var(--color-text-tertiary);
+      margin-bottom: 0.7rem;
     }
     .hero-title {
-      font-size: 27px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.18;
+      font-family: var(--font-serif);
+      font-size: 36px;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      line-height: 1.08;
       color: var(--color-text-primary);
-      border-left: 4px solid #D85A30;
-      padding-left: 14px;
       margin-bottom: 1rem;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: var(--heat);
     }
     .hero-body {
       font-size: 14px;
       color: var(--color-text-secondary);
       line-height: 1.75;
       max-width: 580px;
-      padding-left: 18px;
+    }
+
+    /* ── heat calendar kicker (above map) ── */
+    .cal-section-rule {
+      border: none;
+      border-top: 1px solid var(--color-border-tertiary);
+      margin: 2rem 0 1.5rem;
+    }
+    .heat-cal-kicker {
+      display: flex;
+      align-items: flex-end;
+      gap: 14px;
+      margin-bottom: 1.5rem;
+    }
+    .heat-cal-label {
+      font-family: var(--font-serif);
+      font-size: 48px;
+      font-weight: 900;
+      line-height: 0.95;
+      color: var(--heat);
+      letter-spacing: -1px;
+      flex-shrink: 0;
+    }
+    .heat-cal-sub {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      line-height: 1.5;
+      padding-bottom: 7px;
     }
 
     /* ── pathway bridge ── */
@@ -329,12 +346,13 @@
       .wrap { padding: 1.25rem 0 2rem; }
 
       /* ── Hero ── */
-      .page-title-block { padding: 1.5rem 0 1.1rem; margin-bottom: 1.25rem; }
-      .page-title-main { font-size: 26px; }
       .hero { padding: 1.25rem 0 1rem; margin-bottom: 1.25rem; }
       .hero-eyebrow { font-size: 9px; margin-bottom: 0.4rem; }
-      .hero-title { font-size: 20px; line-height: 1.2; padding-left: 12px; margin-bottom: 0.75rem; }
-      .hero-body { font-size: 13px; line-height: 1.65; padding-left: 0; }
+      .hero-title { font-size: 28px; line-height: 1.1; margin-bottom: 0.75rem; }
+      .hero-body { font-size: 13px; line-height: 1.65; }
+      .cal-section-rule { margin: 1.5rem 0 1.1rem; }
+      .heat-cal-label { font-size: 36px; }
+      .heat-cal-sub { font-size: 10px; }
 
       /* ── Bridge + Explainer ── */
       .pathway-bridge { font-size: 13px; padding: 11px 13px; margin-bottom: 1.25rem; }
@@ -413,14 +431,9 @@
   <main>
     <div class="wrap">
 
-      <div class="page-title-block">
-        <div class="page-title-main">Heat Calendar</div>
-        <div class="page-title-sub">Monthly Heat Stress by Region — Bangladesh Poultry</div>
-      </div>
-
       <div class="hero">
         <div class="hero-eyebrow">Heat Crisis · Bangladesh Poultry</div>
-        <div class="hero-title">Bangladesh's Farms Are Cooking.<br>And the Chickens Can't Sweat.</div>
+        <div class="hero-title">Bangladesh's Farms Are <em>Cooking.</em><br>And the Chickens Can't Sweat.</div>
         <div class="hero-body">
           Heat + Humidity = THI. When it crosses 73, broilers lose 29% of feed intake. At 80, body weight gain drops 53%. In Bangladesh, this happens every summer — silently, across every region.
         </div>
@@ -434,6 +447,12 @@
         <div class="thi-explainer-title">What is THI?</div>
         <p><strong>Temperature-Humidity Index</strong> — one number that tells you how much heat stress your flock is actually under. Not just temperature. Temperature <em>and</em> humidity combined.</p>
         <p>Chickens can't sweat. They pant to cool down. But when the air is hot <em>and</em> humid, panting stops working — and the body starts shutting down. Less eating. Less growing. More dying.</p>
+      </div>
+
+      <hr class="cal-section-rule">
+      <div class="heat-cal-kicker">
+        <div class="heat-cal-label">Heat<br>Calendar</div>
+        <div class="heat-cal-sub">Monthly Heat Stress<br>by Region — Bangladesh</div>
       </div>
 
       <div class="region-selector">
