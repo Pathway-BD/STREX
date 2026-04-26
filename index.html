@@ -175,21 +175,46 @@
     }
     .hero-kicker-label {
       font-family: var(--font-serif);
-      font-size: 42px;
+      font-size: 44px;
       font-weight: 900;
       line-height: 1;
       color: #E06820;
       letter-spacing: -1px;
       flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .bd-flag {
+      display: inline-block;
+      width: 30px;
+      height: 20px;
+      background: #f42a41;
+      border-radius: 3px;
+      position: relative;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .bd-flag::after {
+      content: '';
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: #006a4e;
+      border-radius: 50%;
+      top: 50%;
+      left: 42%;
+      transform: translate(-50%, -50%);
     }
     .hero-kicker-sub {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 18px;
-      font-weight: 700;
-      font-style: italic;
-      color: var(--color-text-primary);
-      line-height: 1.3;
-      padding-bottom: 4px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: var(--color-text-tertiary);
+      line-height: 1.5;
+      padding-bottom: 6px;
     }
     .hero-body {
       font-size: 14px;
@@ -404,8 +429,8 @@
       /* ── Hero ── */
       .hero { padding: 1.25rem 0 1rem; margin-bottom: 1.25rem; }
       .hero-eyebrow { font-size: 9px; margin-bottom: 0.4rem; }
-      .hero-kicker-label { font-size: 34px; }
-      .hero-kicker-sub { font-size: 15px; }
+      .hero-kicker-label { font-size: 36px; }
+      .hero-kicker-sub { font-size: 10px; }
       .hero-body { font-size: 13px; line-height: 1.65; }
       .cal-section-rule { margin: 1.5rem 0 1.1rem; }
       .heat-cal-label { font-size: 36px; }
@@ -491,7 +516,7 @@
       <div class="hero">
         <div class="hero-eyebrow">Heat Crisis · Bangladesh Poultry</div>
         <div class="hero-kicker">
-          <div class="hero-kicker-label">Heat Waves : 🇧🇩</div>
+          <div class="hero-kicker-label">Heat Waves : <span class="bd-flag"></span></div>
           <div class="hero-kicker-sub">The Chickens<br>Can't Sweat.</div>
         </div>
         <div class="hero-body">
