@@ -176,11 +176,20 @@
       color: var(--color-text-primary);
       margin-bottom: 1rem;
     }
+    .hero-line1 {
+      white-space: nowrap;
+      display: block;
+      overflow: hidden;
+    }
+    .hero-pre {
+      font-size: clamp(12px, 3.8vw, 22px);
+      font-weight: 700;
+    }
     .hero-wave {
       color: #E06820;
       font-weight: 700;
       font-style: normal;
-      font-size: 38px;
+      font-size: clamp(26px, 9.5vw, 38px);
     }
     .hero-body {
       font-size: 14px;
@@ -480,7 +489,7 @@
 
       <div class="hero">
         <div class="hero-eyebrow">Heat Crisis · Bangladesh Poultry</div>
-        <div class="hero-title">Bangladesh's <span class="hero-wave">Heat Waves</span> :<br>The Chickens Can't Sweat.</div>
+        <div class="hero-title"><span class="hero-line1"><span class="hero-pre">Bangladesh's </span><span class="hero-wave">Heat Waves</span> :</span><br>The Chickens Can't Sweat.</div>
         <div class="hero-body">
           Heat + Humidity = THI. When it crosses 73, broilers lose 29% of feed intake. At 80, body weight gain drops 53%. In Bangladesh, this happens every summer — silently, across every region.
         </div>
