@@ -310,12 +310,11 @@ html, body {
 </div>
 
 <script>
-  fetch('/api/counter/strex')
+  fetch('/.netlify/functions/counter?page=strex')
     .then(r => r.json())
     .then(d => {
       const el = document.getElementById('viewCount');
-      const count = d.count ?? d.value;
-      if (el && count != null) el.textContent = Number(count).toLocaleString();
+      if (el && d.count != null) el.textContent = Number(d.count).toLocaleString();
     })
     .catch(() => {});
 </script>

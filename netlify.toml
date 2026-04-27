@@ -1,11 +1,6 @@
 [build]
   publish = "."
-
-[[redirects]]
-  from = "/api/counter/:page"
-  to = "https://api.counterapi.dev/v1/pathway-strex/:page/up"
-  status = 200
-  force = true
+  functions = "netlify/functions"
 
 [[headers]]
   for = "/*"
