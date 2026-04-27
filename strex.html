@@ -310,11 +310,12 @@ html, body {
 </div>
 
 <script>
-  fetch('https://api.counterapi.dev/v1/pathway-strex/strex/up')
+  fetch('/api/counter/strex')
     .then(r => r.json())
     .then(d => {
       const el = document.getElementById('viewCount');
-      if (el && d && d.count != null) el.textContent = Number(d.count).toLocaleString();
+      const count = d.count ?? d.value;
+      if (el && count != null) el.textContent = Number(count).toLocaleString();
     })
     .catch(() => {});
 </script>
