@@ -53,20 +53,12 @@
       gap: 16px;
     }
     .site-header .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
       font-size: 17px;
       font-weight: 600;
       letter-spacing: -0.02em;
       color: var(--color-text-primary);
       text-decoration: none;
       white-space: nowrap;
-    }
-    .site-header .logo img {
-      height: 32px;
-      width: auto;
-      display: block;
     }
     .site-header .logo span { color: var(--brand-blue); }
     .site-header .logo em {
@@ -100,8 +92,6 @@
     @media (max-width: 600px) {
       .site-header { padding: 0 1rem; gap: 8px; }
       .site-header .logo em { display: none; }
-      .site-header .logo img { height: 26px; }
-      .site-header .logo { font-size: 15px; gap: 7px; }
       .site-nav { gap: 14px; }
       .site-nav a { font-size: 11.5px; padding: 18px 0; }
     }
@@ -121,11 +111,12 @@
     .hero-brand {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.8rem;
     }
     .hero-brand img {
-      height: 120px;
-      width: auto;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
       display: block;
     }
     .hero-eyebrow {
@@ -139,11 +130,12 @@
     .hero-title {
       font-family: var(--font-serif);
       font-weight: 900;
-      font-size: 52px;
-      line-height: 1.08;
+      font-size: clamp(28px, 5.6vw, 46px);
+      line-height: 1.1;
       letter-spacing: -0.02em;
       color: var(--color-text-primary);
       margin-bottom: 1.15rem;
+      white-space: nowrap;
     }
     .hero-title em {
       font-style: italic;
@@ -159,8 +151,7 @@
     }
     @media (max-width: 600px) {
       .hero { padding: 2.25rem 0 1.75rem; }
-      .hero-brand img { height: 88px; }
-      .hero-title { font-size: 36px; }
+      .hero-title { font-size: 30px; }
       .hero-sub { font-size: 15px; }
     }
 
@@ -247,13 +238,15 @@
     .lineup-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 0.5rem;
+      gap: 14px;
+      margin-top: 0.75rem;
     }
     .lineup-item {
+      position: relative;
       display: flex;
       flex-direction: column;
-      padding: 16px 18px;
+      align-items: stretch;
+      padding: 22px 20px 18px;
       border: 1px solid var(--color-border-tertiary);
       border-radius: var(--border-radius-md);
       background: #ffffff;
@@ -261,24 +254,38 @@
     }
     .lineup-item:hover {
       border-color: var(--brand-blue);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(24, 95, 165, 0.08);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(24, 95, 165, 0.1);
     }
     .lineup-item.is-new {
       border-color: var(--brand-blue);
       background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
     }
-    .lineup-name {
-      font-size: 15.5px;
-      font-weight: 700;
-      color: var(--color-text-primary);
-      letter-spacing: -0.01em;
+    .lineup-logo-wrap {
       display: flex;
       align-items: center;
-      gap: 8px;
+      justify-content: flex-start;
+      height: 54px;
+      margin-bottom: 14px;
+    }
+    .lineup-logo-wrap img {
+      max-height: 100%;
+      max-width: 80%;
+      width: auto;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+    .lineup-desc {
+      font-size: 13.5px;
+      color: var(--color-text-secondary);
+      line-height: 1.55;
     }
     .lineup-tag {
-      font-size: 10px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      font-size: 9.5px;
       font-weight: 700;
       letter-spacing: 0.08em;
       color: #ffffff;
@@ -287,14 +294,9 @@
       border-radius: 4px;
       text-transform: uppercase;
     }
-    .lineup-desc {
-      font-size: 13.5px;
-      color: var(--color-text-tertiary);
-      margin-top: 5px;
-      line-height: 1.55;
-    }
     @media (max-width: 600px) {
       .lineup-grid { grid-template-columns: 1fr; }
+      .lineup-logo-wrap { height: 48px; }
     }
 
     /* ── launch news ── */
@@ -429,10 +431,7 @@
 <body>
 
   <header class="site-header">
-    <a href="pathway.html" class="logo">
-      <img src="pathway-bd-logo.jpg" alt="Pathway Bangladesh" />
-      <span>P</span>athway <em>Bangladesh</em>
-    </a>
+    <a href="pathway.html" class="logo"><span>P</span>athway <em>Bangladesh</em></a>
     <nav class="site-nav">
       <a href="pathway.html" class="active">Home</a>
       <a href="index.html">Heat Calendar</a>
@@ -449,7 +448,7 @@
         <img src="pathway-bd-logo.jpg" alt="Pathway Intermediates Bangladesh" />
       </div>
       <div class="hero-eyebrow">Pathway Intermediates · Bangladesh</div>
-      <h1 class="hero-title">From Research<br/>to <em>Solutions.</em></h1>
+      <h1 class="hero-title">From Research to <em>Solutions.</em></h1>
       <p class="hero-sub">
         Functional feed-additive solutions for Bangladesh's poultry and livestock — built on Pathway Intermediates' science of feeding tomorrow.
       </p>
@@ -482,57 +481,6 @@
       </div>
     </section>
 
-    <!-- ── product lineup ── -->
-    <section class="section">
-      <div class="section-eyebrow">Bangladesh Product Lineup</div>
-      <h2 class="section-title">Ten functional solutions,<br/>one science platform.</h2>
-      <p class="lineup-intro">
-        From absorption to immunity, gut health to heat stress — covering the full performance cycle of modern poultry and livestock production.
-      </p>
-      <div class="lineup-grid">
-        <div class="lineup-item">
-          <div class="lineup-name">Lipidol Plus</div>
-          <div class="lineup-desc">The First Absorption Accelerator</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Endopower Plus</div>
-          <div class="lineup-desc">Powerful Digestion Accelerator</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Growmax</div>
-          <div class="lineup-desc">Organic Chromium for Animal Performance</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Endophos Plus</div>
-          <div class="lineup-desc">Qualified Phytase</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">YeaMune-UP</div>
-          <div class="lineup-desc">Immune Accelerator</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Coccilock</div>
-          <div class="lineup-desc">Eco-friendly Coccidiosis Alleviation</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">ProBe-Bac PE</div>
-          <div class="lineup-desc">Preventative Approach for Bacterial Infection</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Fermkito</div>
-          <div class="lineup-desc">Natural Fermented Chitosan and COS</div>
-        </div>
-        <div class="lineup-item">
-          <div class="lineup-name">Genikan</div>
-          <div class="lineup-desc">High-Quality Yeast Culture for Gut Health</div>
-        </div>
-        <div class="lineup-item is-new">
-          <div class="lineup-name">STREX <span class="lineup-tag">New · Apr 2026</span></div>
-          <div class="lineup-desc">All-in-One Anti-Heat-Stress Solution</div>
-        </div>
-      </div>
-    </section>
-
     <!-- ── STREX launch news ── -->
     <section class="section">
       <div class="section-eyebrow">Latest News · April 2026</div>
@@ -551,6 +499,58 @@
             </p>
           </div>
           <a href="strex.html" class="launch-cta">Learn more about STREX</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── product lineup (moved to bottom) ── -->
+    <section class="section">
+      <div class="section-eyebrow">Bangladesh Product Lineup</div>
+      <h2 class="section-title">Ten functional solutions,<br/>one science platform.</h2>
+      <p class="lineup-intro">
+        From absorption to immunity, gut health to heat stress — covering the full performance cycle of modern poultry and livestock production.
+      </p>
+      <div class="lineup-grid">
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/lipidol.png" alt="Lipidol Plus" /></div>
+          <div class="lineup-desc">The First Absorption Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/endopower.png" alt="Endopower Plus" /></div>
+          <div class="lineup-desc">Powerful Digestion Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/growmax.png" alt="Growmax" /></div>
+          <div class="lineup-desc">Organic Chromium for Animal Performance</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/endophos.png" alt="Endophos Plus" /></div>
+          <div class="lineup-desc">Qualified Phytase</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/yeamune.png" alt="YeaMune-UP" /></div>
+          <div class="lineup-desc">Immune Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/coccilock.png" alt="Coccilock" /></div>
+          <div class="lineup-desc">Eco-friendly Coccidiosis Alleviation</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/probebac.png" alt="ProBe-Bac PE" /></div>
+          <div class="lineup-desc">Preventative Approach for Bacterial Infection</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/fermkito.png" alt="Fermkito" /></div>
+          <div class="lineup-desc">Natural Fermented Chitosan and COS</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/genikan.png" alt="Genikan" /></div>
+          <div class="lineup-desc">High-Quality Yeast Culture for Gut Health</div>
+        </div>
+        <div class="lineup-item is-new">
+          <span class="lineup-tag">New · Apr 2026</span>
+          <div class="lineup-logo-wrap"><img src="logos/strex.png" alt="STREX" /></div>
+          <div class="lineup-desc">All-in-One Anti-Heat-Stress Solution</div>
         </div>
       </div>
     </section>
