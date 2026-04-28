@@ -16,13 +16,13 @@
     :root {
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
       --font-serif: 'Playfair Display', Georgia, serif;
-      --color-text-primary: #0f0f0f;
-      --color-text-secondary: #4a4a4a;
-      --color-text-tertiary: #888888;
+      --color-text-primary: #111111;
+      --color-text-secondary: #3a3a3a;
+      --color-text-tertiary: #6f6f6f;
       --color-background-primary: #ffffff;
       --color-background-secondary: #f4f4f4;
       --color-border-secondary: #b8b8b8;
-      --color-border-tertiary: #dcdcdc;
+      --color-border-tertiary: #e2e2e2;
       --brand-blue: #185FA5;
       --brand-blue-deep: #0f3f73;
       --bd-green: #006a4e;
@@ -115,35 +115,35 @@
 
     /* ── hero (centered logo) ── */
     .hero {
-      padding: 3rem 0 2rem;
+      padding: 3.5rem 0 2.25rem;
       text-align: center;
     }
     .hero-brand {
       display: flex;
       justify-content: center;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.6rem;
     }
     .hero-brand img {
-      height: 110px;
+      height: 120px;
       width: auto;
       display: block;
     }
     .hero-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       color: var(--brand-blue);
       text-transform: uppercase;
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
     }
     .hero-title {
       font-family: var(--font-serif);
       font-weight: 900;
-      font-size: 48px;
-      line-height: 1.05;
+      font-size: 52px;
+      line-height: 1.08;
       letter-spacing: -0.02em;
       color: var(--color-text-primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.15rem;
     }
     .hero-title em {
       font-style: italic;
@@ -151,54 +151,66 @@
       color: var(--brand-blue);
     }
     .hero-sub {
-      font-size: 15.5px;
-      line-height: 1.7;
+      font-size: 17px;
+      line-height: 1.75;
       color: var(--color-text-secondary);
-      max-width: 560px;
+      max-width: 580px;
       margin: 0 auto;
     }
     @media (max-width: 600px) {
-      .hero { padding: 2rem 0 1.5rem; }
-      .hero-brand img { height: 80px; }
-      .hero-title { font-size: 34px; }
-      .hero-sub { font-size: 14px; }
+      .hero { padding: 2.25rem 0 1.75rem; }
+      .hero-brand img { height: 88px; }
+      .hero-title { font-size: 36px; }
+      .hero-sub { font-size: 15px; }
     }
 
     /* ── section base ── */
     .section {
-      padding: 2.25rem 0;
+      padding: 3rem 0;
       border-top: 1px solid var(--color-border-tertiary);
     }
     .section-eyebrow {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.14em;
-      color: var(--color-text-tertiary);
+      letter-spacing: 0.16em;
+      color: var(--brand-blue);
       text-transform: uppercase;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.85rem;
     }
     .section-title {
       font-family: var(--font-serif);
       font-weight: 900;
-      font-size: 30px;
-      line-height: 1.15;
+      font-size: 32px;
+      line-height: 1.2;
       letter-spacing: -0.01em;
       color: var(--color-text-primary);
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
     .section-body {
-      font-size: 14.5px;
-      line-height: 1.8;
+      font-size: 16px;
+      line-height: 1.85;
       color: var(--color-text-secondary);
     }
-    .section-body p + p { margin-top: 0.85rem; }
+    .section-body p + p { margin-top: 1.1rem; }
     .section-body strong { color: var(--color-text-primary); font-weight: 600; }
+    .about-note {
+      font-size: 13px !important;
+      color: var(--color-text-tertiary) !important;
+      letter-spacing: 0.02em;
+      margin-top: 1.4rem !important;
+    }
+    .about-note em { color: var(--brand-blue); font-style: italic; font-weight: 600; }
+    @media (max-width: 600px) {
+      .section { padding: 2.25rem 0; }
+      .section-title { font-size: 26px; }
+      .section-body { font-size: 15px; line-height: 1.8; }
+    }
 
     /* ── about (intro + poster) ── */
     .about-grid {
       display: grid;
       grid-template-columns: 1.15fr 1fr;
-      gap: 28px;
+      gap: 36px;
       align-items: start;
     }
     .about-poster {
@@ -206,7 +218,7 @@
       border-radius: var(--border-radius-lg);
       overflow: hidden;
       border: 1px solid var(--color-border-tertiary);
-      box-shadow: 0 4px 14px rgba(15, 63, 115, 0.06);
+      box-shadow: 0 6px 18px rgba(15, 63, 115, 0.07);
     }
     .about-poster img {
       width: 100%;
@@ -214,48 +226,50 @@
       display: block;
     }
     .about-poster-caption {
-      font-size: 11px;
+      font-size: 11.5px;
       color: var(--color-text-tertiary);
       text-align: center;
-      margin-top: 8px;
-      letter-spacing: 0.02em;
+      margin-top: 10px;
+      letter-spacing: 0.04em;
     }
     @media (max-width: 720px) {
-      .about-grid { grid-template-columns: 1fr; gap: 22px; }
+      .about-grid { grid-template-columns: 1fr; gap: 24px; }
     }
 
     /* ── product lineup ── */
     .lineup-intro {
-      font-size: 14.5px;
-      line-height: 1.75;
+      font-size: 16px;
+      line-height: 1.8;
       color: var(--color-text-secondary);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+      max-width: 620px;
     }
     .lineup-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 10px 14px;
+      gap: 12px;
       margin-top: 0.5rem;
     }
     .lineup-item {
       display: flex;
       flex-direction: column;
-      padding: 12px 14px;
+      padding: 16px 18px;
       border: 1px solid var(--color-border-tertiary);
       border-radius: var(--border-radius-md);
       background: #ffffff;
-      transition: border-color 0.15s, transform 0.15s;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
     }
     .lineup-item:hover {
       border-color: var(--brand-blue);
       transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(24, 95, 165, 0.08);
     }
     .lineup-item.is-new {
       border-color: var(--brand-blue);
       background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
     }
     .lineup-name {
-      font-size: 14px;
+      font-size: 15.5px;
       font-weight: 700;
       color: var(--color-text-primary);
       letter-spacing: -0.01em;
@@ -264,20 +278,20 @@
       gap: 8px;
     }
     .lineup-tag {
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       color: #ffffff;
       background: var(--brand-blue);
-      padding: 2px 6px;
+      padding: 3px 7px;
       border-radius: 4px;
       text-transform: uppercase;
     }
     .lineup-desc {
-      font-size: 12px;
+      font-size: 13.5px;
       color: var(--color-text-tertiary);
-      margin-top: 3px;
-      line-height: 1.5;
+      margin-top: 5px;
+      line-height: 1.55;
     }
     @media (max-width: 600px) {
       .lineup-grid { grid-template-columns: 1fr; }
@@ -289,7 +303,7 @@
       border: 1px solid var(--color-border-tertiary);
       border-radius: var(--border-radius-lg);
       overflow: hidden;
-      box-shadow: 0 6px 20px rgba(15, 63, 115, 0.07);
+      box-shadow: 0 8px 28px rgba(15, 63, 115, 0.08);
     }
     .launch-photo {
       width: 100%;
@@ -298,34 +312,34 @@
       background: #eaf2fb;
     }
     .launch-body {
-      padding: 1.5rem 1.5rem 1.6rem;
+      padding: 1.85rem 1.85rem 1.85rem;
     }
     .launch-meta {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 10.5px;
+      gap: 10px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       color: var(--brand-blue);
       text-transform: uppercase;
-      margin-bottom: 0.65rem;
+      margin-bottom: 0.85rem;
     }
     .launch-meta::before {
       content: '';
-      width: 18px;
+      width: 22px;
       height: 1.5px;
       background: var(--brand-blue);
       display: inline-block;
     }
     .launch-title {
       font-family: var(--font-serif);
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.25;
       letter-spacing: -0.01em;
       color: var(--color-text-primary);
-      margin-bottom: 0.85rem;
+      margin-bottom: 1rem;
     }
     .launch-title em {
       color: var(--brand-blue);
@@ -333,66 +347,21 @@
       font-weight: 700;
     }
     .launch-text {
-      font-size: 14px;
-      line-height: 1.75;
+      font-size: 15.5px;
+      line-height: 1.85;
       color: var(--color-text-secondary);
     }
-    .launch-text p + p { margin-top: 0.7rem; }
-    .launch-quote {
-      margin-top: 1rem;
-      padding: 0.9rem 1rem;
-      background: #f4f9ff;
-      border-left: 3px solid var(--brand-blue);
-      border-radius: 6px;
-      font-size: 13.5px;
-      line-height: 1.7;
-      color: var(--color-text-secondary);
-      font-style: italic;
-    }
-    .launch-quote-author {
-      display: block;
-      margin-top: 6px;
-      font-style: normal;
-      font-size: 11.5px;
-      color: var(--color-text-tertiary);
-      letter-spacing: 0.02em;
-    }
-    .launch-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 1.2rem;
-    }
-    .launch-stat {
-      background: #ffffff;
-      border: 1px solid var(--color-border-tertiary);
-      border-radius: 8px;
-      padding: 10px 12px;
-      text-align: center;
-    }
-    .launch-stat-num {
-      font-family: var(--font-serif);
-      font-weight: 900;
-      font-size: 22px;
-      color: var(--brand-blue);
-      line-height: 1.1;
-    }
-    .launch-stat-label {
-      font-size: 10.5px;
-      color: var(--color-text-tertiary);
-      margin-top: 4px;
-      letter-spacing: 0.02em;
-      line-height: 1.4;
-    }
+    .launch-text p + p { margin-top: 1rem; }
+    .launch-text strong { color: var(--color-text-primary); font-weight: 600; }
     .launch-cta {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-top: 1.2rem;
-      padding: 10px 16px;
+      margin-top: 1.5rem;
+      padding: 12px 20px;
       background: var(--brand-blue);
       color: #ffffff;
-      font-size: 13px;
+      font-size: 14px;
       font-weight: 600;
       letter-spacing: 0.02em;
       text-decoration: none;
@@ -402,9 +371,9 @@
     .launch-cta:hover { background: var(--brand-blue-deep); }
     .launch-cta::after { content: '→'; }
     @media (max-width: 600px) {
-      .launch-body { padding: 1.1rem 1.1rem 1.3rem; }
-      .launch-title { font-size: 20px; }
-      .launch-stats { grid-template-columns: 1fr; }
+      .launch-body { padding: 1.3rem 1.3rem 1.4rem; }
+      .launch-title { font-size: 21px; }
+      .launch-text { font-size: 14.5px; }
     }
 
     /* ── pathway footer ── */
@@ -480,9 +449,9 @@
         <img src="pathway-bd-logo.jpg" alt="Pathway Intermediates Bangladesh" />
       </div>
       <div class="hero-eyebrow">Pathway Intermediates · Bangladesh</div>
-      <h1 class="hero-title">From Research<br/>to <em>Solutions</em></h1>
+      <h1 class="hero-title">From Research<br/>to <em>Solutions.</em></h1>
       <p class="hero-sub">
-        Animal nutrition solutions for Bangladesh's poultry and livestock — backed by Pathway Intermediates' science of feeding tomorrow.
+        Functional feed-additive solutions for Bangladesh's poultry and livestock — built on Pathway Intermediates' science of feeding tomorrow.
       </p>
     </section>
 
@@ -490,17 +459,17 @@
     <section class="section">
       <div class="about-grid">
         <div>
-          <div class="section-eyebrow">About Pathway Intermediates</div>
-          <h2 class="section-title">A research-driven feed additive partner for Bangladesh.</h2>
+          <div class="section-eyebrow">About Pathway</div>
+          <h2 class="section-title">A research-driven<br/>feed-additive partner.</h2>
           <div class="section-body">
             <p>
-              <strong>Pathway Intermediates</strong> is a Korea-headquartered animal nutrition company developing functional feed additives for poultry, swine, and ruminants. Our work spans absorption acceleration, gut health, immunity, and stress management — solutions designed to lift productivity in real, on-farm conditions.
+              <strong>Pathway Intermediates</strong> is a Korea-based animal nutrition company developing functional feed additives for poultry, swine, and ruminants — covering absorption, gut health, immunity, and stress management.
             </p>
             <p>
-              In Bangladesh, we work alongside local feed mills, integrators, and farms to bring proven science to the country's hot, humid climate. Our regional team supports customers across <strong>broiler, layer, and dairy</strong> operations — from product trials to in-field application.
+              In Bangladesh, our regional team works with feed mills, integrators, and farms across <strong>broiler, layer, and dairy</strong> operations — bringing proven science to the country's hot, humid climate.
             </p>
-            <p>
-              The poster on the right summarizes our 2026 Bangladesh product lineup as featured in <em>BD Magazine</em>.
+            <p class="about-note">
+              Featured in <em>BD Magazine 2026</em> →
             </p>
           </div>
         </div>
@@ -516,9 +485,9 @@
     <!-- ── product lineup ── -->
     <section class="section">
       <div class="section-eyebrow">Bangladesh Product Lineup</div>
-      <h2 class="section-title">Ten functional solutions, one science platform.</h2>
+      <h2 class="section-title">Ten functional solutions,<br/>one science platform.</h2>
       <p class="lineup-intro">
-        From absorption to immunity, gut health to heat stress — Pathway's Bangladesh portfolio covers the full performance cycle of modern poultry and livestock production.
+        From absorption to immunity, gut health to heat stress — covering the full performance cycle of modern poultry and livestock production.
       </p>
       <div class="lineup-grid">
         <div class="lineup-item">
@@ -567,7 +536,7 @@
     <!-- ── STREX launch news ── -->
     <section class="section">
       <div class="section-eyebrow">Latest News · April 2026</div>
-      <h2 class="section-title">RS Poultry × Pathway Intermediates launch <span style="color:var(--brand-blue);font-style:italic;">STREX</span> in Bangladesh.</h2>
+      <h2 class="section-title">RS Poultry × Pathway Intermediates<br/>launch <span style="color:var(--brand-blue);font-style:italic;">STREX</span> in Bangladesh.</h2>
       <div class="launch-card">
         <img class="launch-photo" src="strex-launching.png" alt="STREX Launching Ceremony — RS Poultry × Pathway Intermediates" />
         <div class="launch-body">
@@ -575,34 +544,13 @@
           <div class="launch-title">A New Solution for <em>Heat Stress Resilience</em> in Bangladesh's Livestock Industry</div>
           <div class="launch-text">
             <p>
-              In Bangladesh's monsoon climate, livestock farming faces a relentless challenge: heat stress. With the Temperature-Humidity Index (THI) consistently exceeding the critical threshold of 72 across all regions — and climbing to <strong>77–81</strong> from May through September — animals are pushed into moderate-to-severe thermal stress, with feed intake dropping by as much as <strong>30%</strong>.
+              On <strong>April 17, 2026</strong>, <strong>RS Poultry</strong> and <strong>Pathway Intermediates</strong> officially launched <strong>STREX</strong> in the Bangladeshi market — a new all-in-one solution designed for the country's hot, humid climate.
             </p>
             <p>
-              To address this, RS Poultry has partnered with Pathway Intermediates to officially launch <strong>STREX</strong> in the Bangladeshi market. STREX is an all-in-one solution built for hot, humid climates — using <strong>fermented functional sugar</strong> to deliver a "Cooling Sensation" that reduces heat sensitivity via receptor modulation, normalizes feed intake, and protects productivity. It also provides antioxidant and antipyretic effects while supporting gut health and immunity, even at high THI levels.
+              STREX joins Pathway's Bangladesh lineup as the company's flagship answer to chronic heat stress across poultry and dairy operations.
             </p>
           </div>
-
-          <div class="launch-quote">
-            "STREX has been tested under our research farm. In dairy cattle trials, we've seen an <strong>8.1% increase in milk yield</strong> and improved udder health even during the hottest summer months. For poultry, it has improved <strong>feed intake by 4.1%</strong> and <strong>survival rates by 3.1%</strong> in environments with THI levels as high as 85. We're incredibly excited to bring these results to the Bangladeshi market."
-            <span class="launch-quote-author">— Ness, Product Manager, Pathway Intermediates</span>
-          </div>
-
-          <div class="launch-stats">
-            <div class="launch-stat">
-              <div class="launch-stat-num">+8.1%</div>
-              <div class="launch-stat-label">Milk yield<br/>(dairy trial)</div>
-            </div>
-            <div class="launch-stat">
-              <div class="launch-stat-num">+4.1%</div>
-              <div class="launch-stat-label">Feed intake<br/>(poultry, THI 85)</div>
-            </div>
-            <div class="launch-stat">
-              <div class="launch-stat-num">+3.1%</div>
-              <div class="launch-stat-label">Survival rate<br/>(poultry, THI 85)</div>
-            </div>
-          </div>
-
-          <a href="strex.html" class="launch-cta">Explore STREX</a>
+          <a href="strex.html" class="launch-cta">Learn more about STREX</a>
         </div>
       </div>
     </section>
