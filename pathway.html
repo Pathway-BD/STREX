@@ -6,12 +6,12 @@
   <title>Pathway Bangladesh</title>
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Pathway Bangladesh" />
-  <meta property="og:description" content="Pathway Intermediates Bangladesh — animal nutrition solutions for poultry and livestock." />
+  <meta property="og:description" content="Pathway Intermediates Bangladesh — animal nutrition solutions for poultry and livestock. STREX launched April 2026." />
   <meta property="og:site_name" content="Pathway Intermediates" />
-  <meta name="description" content="Pathway Intermediates Bangladesh — animal nutrition solutions for poultry and livestock." />
+  <meta name="description" content="Pathway Intermediates Bangladesh — animal nutrition solutions for poultry and livestock. STREX launched April 2026." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
   <style>
     :root {
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
@@ -24,6 +24,9 @@
       --color-border-secondary: #b8b8b8;
       --color-border-tertiary: #dcdcdc;
       --brand-blue: #185FA5;
+      --brand-blue-deep: #0f3f73;
+      --bd-green: #006a4e;
+      --bd-red: #f42a41;
       --border-radius-md: 10px;
       --border-radius-lg: 12px;
     }
@@ -38,7 +41,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── shared site header (used across all pages) ── */
+    /* ── shared site header ── */
     .site-header {
       background: #ffffff;
       border-bottom: 1px solid var(--color-border-tertiary);
@@ -50,12 +53,20 @@
       gap: 16px;
     }
     .site-header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
       font-size: 17px;
       font-weight: 600;
       letter-spacing: -0.02em;
       color: var(--color-text-primary);
       text-decoration: none;
       white-space: nowrap;
+    }
+    .site-header .logo img {
+      height: 32px;
+      width: auto;
+      display: block;
     }
     .site-header .logo span { color: var(--brand-blue); }
     .site-header .logo em {
@@ -89,37 +100,50 @@
     @media (max-width: 600px) {
       .site-header { padding: 0 1rem; gap: 8px; }
       .site-header .logo em { display: none; }
+      .site-header .logo img { height: 26px; }
+      .site-header .logo { font-size: 15px; gap: 7px; }
       .site-nav { gap: 14px; }
       .site-nav a { font-size: 11.5px; padding: 18px 0; }
     }
 
     /* ── main layout ── */
     main {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 1.75rem;
     }
 
-    /* ── hero ── */
+    /* ── hero (centered logo) ── */
     .hero {
-      padding: 3rem 0 2.5rem;
+      padding: 3rem 0 2rem;
+      text-align: center;
+    }
+    .hero-brand {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1.4rem;
+    }
+    .hero-brand img {
+      height: 110px;
+      width: auto;
+      display: block;
     }
     .hero-eyebrow {
       font-size: 11px;
       font-weight: 600;
-      letter-spacing: 0.09em;
-      color: var(--color-text-tertiary);
+      letter-spacing: 0.14em;
+      color: var(--brand-blue);
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
     }
     .hero-title {
       font-family: var(--font-serif);
       font-weight: 900;
-      font-size: 56px;
+      font-size: 48px;
       line-height: 1.05;
       letter-spacing: -0.02em;
       color: var(--color-text-primary);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .hero-title em {
       font-style: italic;
@@ -127,34 +151,260 @@
       color: var(--brand-blue);
     }
     .hero-sub {
-      font-size: 16px;
-      line-height: 1.65;
+      font-size: 15.5px;
+      line-height: 1.7;
       color: var(--color-text-secondary);
       max-width: 560px;
-      margin-bottom: 1.75rem;
-    }
-    .hero-logo-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--color-border-tertiary);
-    }
-    .hero-logo {
-      height: 40px;
-      width: auto;
-      display: block;
-    }
-    .hero-logo-tag {
-      font-size: 12px;
-      color: var(--color-text-tertiary);
-      letter-spacing: 0.01em;
+      margin: 0 auto;
     }
     @media (max-width: 600px) {
-      .hero { padding: 2rem 0 2rem; }
-      .hero-title { font-size: 40px; }
+      .hero { padding: 2rem 0 1.5rem; }
+      .hero-brand img { height: 80px; }
+      .hero-title { font-size: 34px; }
       .hero-sub { font-size: 14px; }
-      .hero-logo { height: 32px; }
+    }
+
+    /* ── section base ── */
+    .section {
+      padding: 2.25rem 0;
+      border-top: 1px solid var(--color-border-tertiary);
+    }
+    .section-eyebrow {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--color-text-tertiary);
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      color: var(--color-text-primary);
+      margin-bottom: 1rem;
+    }
+    .section-body {
+      font-size: 14.5px;
+      line-height: 1.8;
+      color: var(--color-text-secondary);
+    }
+    .section-body p + p { margin-top: 0.85rem; }
+    .section-body strong { color: var(--color-text-primary); font-weight: 600; }
+
+    /* ── about (intro + poster) ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+    .about-poster {
+      background: #f4f4f4;
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--color-border-tertiary);
+      box-shadow: 0 4px 14px rgba(15, 63, 115, 0.06);
+    }
+    .about-poster img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .about-poster-caption {
+      font-size: 11px;
+      color: var(--color-text-tertiary);
+      text-align: center;
+      margin-top: 8px;
+      letter-spacing: 0.02em;
+    }
+    @media (max-width: 720px) {
+      .about-grid { grid-template-columns: 1fr; gap: 22px; }
+    }
+
+    /* ── product lineup ── */
+    .lineup-intro {
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.25rem;
+    }
+    .lineup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px 14px;
+      margin-top: 0.5rem;
+    }
+    .lineup-item {
+      display: flex;
+      flex-direction: column;
+      padding: 12px 14px;
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-md);
+      background: #ffffff;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .lineup-item:hover {
+      border-color: var(--brand-blue);
+      transform: translateY(-1px);
+    }
+    .lineup-item.is-new {
+      border-color: var(--brand-blue);
+      background: linear-gradient(180deg, #f4f9ff 0%, #ffffff 100%);
+    }
+    .lineup-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .lineup-tag {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #ffffff;
+      background: var(--brand-blue);
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+    .lineup-desc {
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .lineup-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── launch news ── */
+    .launch-card {
+      background: #ffffff;
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(15, 63, 115, 0.07);
+    }
+    .launch-photo {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #eaf2fb;
+    }
+    .launch-body {
+      padding: 1.5rem 1.5rem 1.6rem;
+    }
+    .launch-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: var(--brand-blue);
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .launch-meta::before {
+      content: '';
+      width: 18px;
+      height: 1.5px;
+      background: var(--brand-blue);
+      display: inline-block;
+    }
+    .launch-title {
+      font-family: var(--font-serif);
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      color: var(--color-text-primary);
+      margin-bottom: 0.85rem;
+    }
+    .launch-title em {
+      color: var(--brand-blue);
+      font-style: italic;
+      font-weight: 700;
+    }
+    .launch-text {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+    .launch-text p + p { margin-top: 0.7rem; }
+    .launch-quote {
+      margin-top: 1rem;
+      padding: 0.9rem 1rem;
+      background: #f4f9ff;
+      border-left: 3px solid var(--brand-blue);
+      border-radius: 6px;
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--color-text-secondary);
+      font-style: italic;
+    }
+    .launch-quote-author {
+      display: block;
+      margin-top: 6px;
+      font-style: normal;
+      font-size: 11.5px;
+      color: var(--color-text-tertiary);
+      letter-spacing: 0.02em;
+    }
+    .launch-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 1.2rem;
+    }
+    .launch-stat {
+      background: #ffffff;
+      border: 1px solid var(--color-border-tertiary);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .launch-stat-num {
+      font-family: var(--font-serif);
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--brand-blue);
+      line-height: 1.1;
+    }
+    .launch-stat-label {
+      font-size: 10.5px;
+      color: var(--color-text-tertiary);
+      margin-top: 4px;
+      letter-spacing: 0.02em;
+      line-height: 1.4;
+    }
+    .launch-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1.2rem;
+      padding: 10px 16px;
+      background: var(--brand-blue);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .launch-cta:hover { background: var(--brand-blue-deep); }
+    .launch-cta::after { content: '→'; }
+    @media (max-width: 600px) {
+      .launch-body { padding: 1.1rem 1.1rem 1.3rem; }
+      .launch-title { font-size: 20px; }
+      .launch-stats { grid-template-columns: 1fr; }
     }
 
     /* ── pathway footer ── */
@@ -165,7 +415,7 @@
       padding: 20px 0 28px;
     }
     .pathway-footer-inner {
-      max-width: 700px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 1.75rem;
       display: flex;
@@ -210,7 +460,10 @@
 <body>
 
   <header class="site-header">
-    <a href="pathway.html" class="logo"><span>P</span>athway <em>Bangladesh</em></a>
+    <a href="pathway.html" class="logo">
+      <img src="pathway-bd-logo.jpg" alt="Pathway Bangladesh" />
+      <span>P</span>athway <em>Bangladesh</em>
+    </a>
     <nav class="site-nav">
       <a href="pathway.html" class="active">Home</a>
       <a href="index.html">Heat Calendar</a>
@@ -220,17 +473,140 @@
   </header>
 
   <main>
+
+    <!-- ── hero ── -->
     <section class="hero">
+      <div class="hero-brand">
+        <img src="pathway-bd-logo.jpg" alt="Pathway Intermediates Bangladesh" />
+      </div>
       <div class="hero-eyebrow">Pathway Intermediates · Bangladesh</div>
-      <h1 class="hero-title">Pathway <em>Bangladesh</em></h1>
+      <h1 class="hero-title">From Research<br/>to <em>Solutions</em></h1>
       <p class="hero-sub">
-        Animal nutrition solutions for Bangladesh poultry and livestock — backed by Pathway Intermediates' science of feeding tomorrow.
+        Animal nutrition solutions for Bangladesh's poultry and livestock — backed by Pathway Intermediates' science of feeding tomorrow.
       </p>
-      <div class="hero-logo-row">
-        <img class="hero-logo" src="pathway-logo.jpeg" alt="Pathway Intermediates" />
-        <span class="hero-logo-tag">The Science of Feeding Tomorrow</span>
+    </section>
+
+    <!-- ── about ── -->
+    <section class="section">
+      <div class="about-grid">
+        <div>
+          <div class="section-eyebrow">About Pathway Intermediates</div>
+          <h2 class="section-title">A research-driven feed additive partner for Bangladesh.</h2>
+          <div class="section-body">
+            <p>
+              <strong>Pathway Intermediates</strong> is a Korea-headquartered animal nutrition company developing functional feed additives for poultry, swine, and ruminants. Our work spans absorption acceleration, gut health, immunity, and stress management — solutions designed to lift productivity in real, on-farm conditions.
+            </p>
+            <p>
+              In Bangladesh, we work alongside local feed mills, integrators, and farms to bring proven science to the country's hot, humid climate. Our regional team supports customers across <strong>broiler, layer, and dairy</strong> operations — from product trials to in-field application.
+            </p>
+            <p>
+              The poster on the right summarizes our 2026 Bangladesh product lineup as featured in <em>BD Magazine</em>.
+            </p>
+          </div>
+        </div>
+        <div>
+          <div class="about-poster">
+            <img src="bd-magazine-2026.jpeg" alt="Pathway Intermediates — Bangladesh Magazine 2026 Poster" />
+          </div>
+          <div class="about-poster-caption">BD Magazine 2026 · Pathway Intermediates Bangladesh</div>
+        </div>
       </div>
     </section>
+
+    <!-- ── product lineup ── -->
+    <section class="section">
+      <div class="section-eyebrow">Bangladesh Product Lineup</div>
+      <h2 class="section-title">Ten functional solutions, one science platform.</h2>
+      <p class="lineup-intro">
+        From absorption to immunity, gut health to heat stress — Pathway's Bangladesh portfolio covers the full performance cycle of modern poultry and livestock production.
+      </p>
+      <div class="lineup-grid">
+        <div class="lineup-item">
+          <div class="lineup-name">Lipidol Plus</div>
+          <div class="lineup-desc">The First Absorption Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Endopower Plus</div>
+          <div class="lineup-desc">Powerful Digestion Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Growmax</div>
+          <div class="lineup-desc">Organic Chromium for Animal Performance</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Endophos Plus</div>
+          <div class="lineup-desc">Qualified Phytase</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">YeaMune-UP</div>
+          <div class="lineup-desc">Immune Accelerator</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Coccilock</div>
+          <div class="lineup-desc">Eco-friendly Coccidiosis Alleviation</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">ProBe-Bac PE</div>
+          <div class="lineup-desc">Preventative Approach for Bacterial Infection</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Fermkito</div>
+          <div class="lineup-desc">Natural Fermented Chitosan and COS</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-name">Genikan</div>
+          <div class="lineup-desc">High-Quality Yeast Culture for Gut Health</div>
+        </div>
+        <div class="lineup-item is-new">
+          <div class="lineup-name">STREX <span class="lineup-tag">New · Apr 2026</span></div>
+          <div class="lineup-desc">All-in-One Anti-Heat-Stress Solution</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── STREX launch news ── -->
+    <section class="section">
+      <div class="section-eyebrow">Latest News · April 2026</div>
+      <h2 class="section-title">RS Poultry × Pathway Intermediates launch <span style="color:var(--brand-blue);font-style:italic;">STREX</span> in Bangladesh.</h2>
+      <div class="launch-card">
+        <img class="launch-photo" src="strex-launching.png" alt="STREX Launching Ceremony — RS Poultry × Pathway Intermediates" />
+        <div class="launch-body">
+          <div class="launch-meta">Press Release · April 2026</div>
+          <div class="launch-title">A New Solution for <em>Heat Stress Resilience</em> in Bangladesh's Livestock Industry</div>
+          <div class="launch-text">
+            <p>
+              In Bangladesh's monsoon climate, livestock farming faces a relentless challenge: heat stress. With the Temperature-Humidity Index (THI) consistently exceeding the critical threshold of 72 across all regions — and climbing to <strong>77–81</strong> from May through September — animals are pushed into moderate-to-severe thermal stress, with feed intake dropping by as much as <strong>30%</strong>.
+            </p>
+            <p>
+              To address this, RS Poultry has partnered with Pathway Intermediates to officially launch <strong>STREX</strong> in the Bangladeshi market. STREX is an all-in-one solution built for hot, humid climates — using <strong>fermented functional sugar</strong> to deliver a "Cooling Sensation" that reduces heat sensitivity via receptor modulation, normalizes feed intake, and protects productivity. It also provides antioxidant and antipyretic effects while supporting gut health and immunity, even at high THI levels.
+            </p>
+          </div>
+
+          <div class="launch-quote">
+            "STREX has been tested under our research farm. In dairy cattle trials, we've seen an <strong>8.1% increase in milk yield</strong> and improved udder health even during the hottest summer months. For poultry, it has improved <strong>feed intake by 4.1%</strong> and <strong>survival rates by 3.1%</strong> in environments with THI levels as high as 85. We're incredibly excited to bring these results to the Bangladeshi market."
+            <span class="launch-quote-author">— Ness, Product Manager, Pathway Intermediates</span>
+          </div>
+
+          <div class="launch-stats">
+            <div class="launch-stat">
+              <div class="launch-stat-num">+8.1%</div>
+              <div class="launch-stat-label">Milk yield<br/>(dairy trial)</div>
+            </div>
+            <div class="launch-stat">
+              <div class="launch-stat-num">+4.1%</div>
+              <div class="launch-stat-label">Feed intake<br/>(poultry, THI 85)</div>
+            </div>
+            <div class="launch-stat">
+              <div class="launch-stat-num">+3.1%</div>
+              <div class="launch-stat-label">Survival rate<br/>(poultry, THI 85)</div>
+            </div>
+          </div>
+
+          <a href="strex.html" class="launch-cta">Explore STREX</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="pathway-footer">
