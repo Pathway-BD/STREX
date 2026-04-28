@@ -8,26 +8,31 @@
 <style>
 * { margin:0; padding:0; box-sizing:border-box; }
 html, body {
-  width:100%; max-width:390px;
+  width:100%;
   margin:0 auto;
   background:#f7f9fc;
   font-family:'DM Sans', sans-serif;
   color:#1a2e42;
   min-height:100vh;
 }
+/* content column — keeps phone-style card design centered on desktop/iPad */
+.strex-main {
+  max-width:440px;
+  margin:0 auto;
+}
 /* ── shared site header (matches pathway.html / index.html / self-diagnosis.html) ── */
 .site-header {
   background:#ffffff;
   border-bottom:1px solid #dcdcdc;
-  padding:0 16px;
+  padding:0 1.75rem;
   height:56px;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:8px;
+  gap:16px;
 }
 .site-header .logo {
-  font-size:15px;
+  font-size:17px;
   font-weight:600;
   letter-spacing:-0.02em;
   color:#0f0f0f;
@@ -35,13 +40,21 @@ html, body {
   white-space:nowrap;
 }
 .site-header .logo span { color:#185FA5; }
+.site-header .logo em {
+  font-style:normal;
+  font-weight:400;
+  color:#888888;
+  margin-left:4px;
+  font-size:13px;
+  letter-spacing:0;
+}
 .site-nav {
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:22px;
 }
 .site-nav a {
-  font-size:11.5px;
+  font-size:13px;
   font-weight:500;
   color:#4a4a4a;
   text-decoration:none;
@@ -54,6 +67,12 @@ html, body {
 .site-nav a.active {
   color:#0f0f0f;
   border-bottom-color:#185FA5;
+}
+@media (max-width: 600px) {
+  .site-header { padding:0 1rem; gap:8px; }
+  .site-header .logo em { display:none; }
+  .site-nav { gap:14px; }
+  .site-nav a { font-size:11.5px; }
 }
 
 .hero-card {
@@ -202,7 +221,7 @@ html, body {
 <body>
 
 <header class="site-header">
-  <a href="pathway.html" class="logo"><span>P</span>athway</a>
+  <a href="pathway.html" class="logo"><span>P</span>athway <em>Bangladesh</em></a>
   <nav class="site-nav">
     <a href="pathway.html">Home</a>
     <a href="index.html">Heat Calendar</a>
@@ -210,6 +229,8 @@ html, body {
     <a href="strex.html" class="active">STREX</a>
   </nav>
 </header>
+
+<main class="strex-main">
 
 <div class="hero-card">
   <img class="strex-logo" src="product-logo.png" alt="STREX">
@@ -314,5 +335,7 @@ html, body {
     <a href="mailto:abdur.rahman@pathway-intermediates.com" style="color:#1a6ebf;text-decoration:none;">abdur.rahman@pathway-intermediates.com</a>
   </div>
 </div>
+
+</main>
 </body>
 </html>
