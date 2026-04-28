@@ -295,8 +295,12 @@
       text-transform: uppercase;
     }
     @media (max-width: 600px) {
-      .lineup-grid { grid-template-columns: 1fr; }
-      .lineup-logo-wrap { height: 48px; }
+      .lineup-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
+      .lineup-item { padding: 14px 10px 12px; }
+      .lineup-logo-wrap { height: 36px; margin-bottom: 10px; }
+      .lineup-logo-wrap img { max-width: 92%; }
+      .lineup-desc { font-size: 11.5px; line-height: 1.45; }
+      .lineup-tag { font-size: 8px; padding: 2px 5px; top: 8px; right: 8px; letter-spacing: 0.05em; }
     }
 
     /* ── launch news ── */
@@ -511,6 +515,15 @@
         From absorption to immunity, gut health to heat stress — covering the full performance cycle of modern poultry and livestock production.
       </p>
       <div class="lineup-grid">
+        <div class="lineup-item is-new">
+          <span class="lineup-tag">New · Apr 2026</span>
+          <div class="lineup-logo-wrap"><img src="logos/strex.png" alt="STREX" /></div>
+          <div class="lineup-desc">All-in-One Anti-Heat-Stress Solution</div>
+        </div>
+        <div class="lineup-item">
+          <div class="lineup-logo-wrap"><img src="logos/probebac.png" alt="ProBe-Bac PE" /></div>
+          <div class="lineup-desc">Preventative Approach for Bacterial Infection</div>
+        </div>
         <div class="lineup-item">
           <div class="lineup-logo-wrap"><img src="logos/lipidol.png" alt="Lipidol Plus" /></div>
           <div class="lineup-desc">The First Absorption Accelerator</div>
@@ -536,21 +549,12 @@
           <div class="lineup-desc">Eco-friendly Coccidiosis Alleviation</div>
         </div>
         <div class="lineup-item">
-          <div class="lineup-logo-wrap"><img src="logos/probebac.png" alt="ProBe-Bac PE" /></div>
-          <div class="lineup-desc">Preventative Approach for Bacterial Infection</div>
-        </div>
-        <div class="lineup-item">
           <div class="lineup-logo-wrap"><img src="logos/fermkito.png" alt="Fermkito" /></div>
           <div class="lineup-desc">Natural Fermented Chitosan and COS</div>
         </div>
         <div class="lineup-item">
           <div class="lineup-logo-wrap"><img src="logos/genikan.png" alt="Genikan" /></div>
           <div class="lineup-desc">High-Quality Yeast Culture for Gut Health</div>
-        </div>
-        <div class="lineup-item is-new">
-          <span class="lineup-tag">New · Apr 2026</span>
-          <div class="lineup-logo-wrap"><img src="logos/strex.png" alt="STREX" /></div>
-          <div class="lineup-desc">All-in-One Anti-Heat-Stress Solution</div>
         </div>
       </div>
     </section>
