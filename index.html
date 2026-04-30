@@ -695,6 +695,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="cal-detail-wrap" id="calDetailWrap"></div>
 
+      <div class="season-summary-layout" style="margin-bottom:1.25rem;">
+        <div class="season-row" id="seasonRow"></div>
+        <div class="cards2">
+          <div class="icard">
+            <div class="icard-title">Annual summary</div>
+            <div id="summaryRows"></div>
+          </div>
+          <div class="icard" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;">
+            <img src="product-logo.png" alt="STREX" style="height:52px;width:auto;display:block;">
+            <div id="strexRows"></div>
+            <a href="strex.html" class="icard-link-btn" style="display:inline-flex;flex-direction:column;align-items:center;line-height:1.35;padding:7px 16px;">
+              <span style="font-size:10px;font-weight:600;">learn about</span>
+              <span style="font-size:13px;font-weight:700;">STREX</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div class="thi-impact-wrap">
         <div class="thi-impact-label">What each THI level does to your flock</div>
         <table class="thi-impact-table">
@@ -745,24 +763,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </tbody>
         </table>
         <div class="thi-impact-caption">(Islam et al., 2023; Armstrong, 1994)</div>
-      </div>
-
-      <div class="season-summary-layout">
-        <div class="season-row" id="seasonRow"></div>
-        <div class="cards2">
-          <div class="icard">
-            <div class="icard-title">Annual summary</div>
-            <div id="summaryRows"></div>
-          </div>
-          <div class="icard">
-            <img src="product-logo.png" alt="STREX" style="height:32px;width:auto;display:block;margin-bottom:10px;">
-            <div class="icard-title-row">
-              <div class="icard-title">STREX window</div>
-              <a href="strex.html" class="icard-link-btn">Learn about STREX →</a>
-            </div>
-            <div id="strexRows"></div>
-          </div>
-        </div>
       </div>
 
       <div class="banner" id="strexBanner"></div>
@@ -1009,7 +1009,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="irow"><span class="irow-l">Recommended period</span><span class="irow-r">${d.strexWindow}</span></div>
         <div class="irow"><span class="irow-l">Duration</span><span class="irow-r">${d.strexMonths} months/year</span></div>
         <div class="irow"><span class="irow-l">Critical months</span><span class="irow-r">Jun – Sep</span></div>
-        <div class="irow"><span class="irow-l">THI scale</span><span class="irow-r">Armstrong (1994)</span></div>
       `;
       document.getElementById('strexBanner').innerHTML = `
         <div class="banner-title">STREX intervention strategy — ${rkey} region</div>
