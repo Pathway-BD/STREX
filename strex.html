@@ -24,7 +24,7 @@ html, body {
 }
 /* content column — keeps phone-style card design centered on desktop/iPad */
 .strex-main {
-  max-width:440px;
+  max-width:700px;
   margin:0 auto;
 }
 /* ── shared site header (matches pathway.html / index.html / self-diagnosis.html) ── */
@@ -80,6 +80,16 @@ html, body {
   .site-header .logo em { display:none; }
   .site-nav { gap:14px; }
   .site-nav a { font-size:11.5px; }
+}
+
+/* Desktop / iPad: expand cards to fill wider column */
+@media (min-width: 480px) {
+  .hero-card { margin:16px 0 0; padding:28px 28px 24px; }
+  .sec-label { padding:20px 0 10px; }
+  .mech-list { margin:0; }
+  .results-row { margin:0; }
+  .spec-card { margin:0; }
+  .korea-band { margin:12px 0 0; }
 }
 
 .hero-card {
@@ -159,7 +169,7 @@ html, body {
   border-radius:14px; padding:14px 8px; text-align:center;
 }
 .result-animal {
-  font-size:9px; font-weight:600;
+  font-size:11px; font-weight:600;
   letter-spacing:.5px; text-transform:uppercase;
   color:#6b8299; margin-bottom:5px;
 }
@@ -196,7 +206,8 @@ html, body {
   display:flex; align-items:center; gap:14px;
 }
 .korea-flag { flex-shrink:0; }
-@media (max-width:767px) { .korea-flag { display:none; } }
+.korea-flag-emoji { display:none; }
+@media (max-width:767px) { .korea-flag-emoji { display:inline; } }
 @media (min-width:768px) { .korea-band { display:flex; } }
 .korea-text { flex:1; }
 .korea-main {
@@ -249,9 +260,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-headline">Multi-Target Solution for Heat Stress Management </div>
   <div class="hero-desc">A total anti-stress solution for heat stress and disease challenges, providing a cooling sensation and supporting feed intake.</div>
   <div class="tags">
-    <span class="tag">#stress mitigation</span>
-    <span class="tag">#cooling sensation</span>
-    <span class="tag">#appetite maintenance</span>
+    <span class="tag">stress mitigation</span>
+    <span class="tag">cooling sensation</span>
+    <span class="tag">appetite maintenance</span>
   </div>
   <div class="dosage-box">
     <div class="dosage-label">Recommended Dosage</div>
@@ -334,7 +345,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="korea-band">
   <div class="korea-flag"><img src="korea-flag.png" alt="South Korea" style="width:44px;height:30px;border-radius:3px;box-shadow:0 0 0 1px rgba(0,0,0,0.10);object-fit:cover;"></div>
   <div class="korea-text">
-    <div class="korea-main">Manufactured in <strong>Korea</strong></div>
+    <div class="korea-main"><span class="korea-flag-emoji">🇰🇷 </span>Manufactured in <strong>Korea</strong></div>
     <div class="korea-sub">Produced by EASYBIO Co., Ltd. · Seoul, South Korea</div>
   </div>
 </div>
